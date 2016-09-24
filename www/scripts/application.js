@@ -7,9 +7,9 @@ angular.module('SteroidsApplication', [
   $scope.navbarTitle = "Hammock";
 
   $http.get("www.herokuapp.com/allposts")
-  	.success(data){
+  	.success(function(data){
   		$scope.allposts = data
-  	}
+  	)}
   	.error(data){
   		console.log("The error is: " + data)
   	}
