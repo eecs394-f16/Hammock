@@ -5,4 +5,9 @@ angular.module('SteroidsApplication', [
 
   $scope.navbarTitle = "Hammock";
 
+  $scope.tempFriend = {
+    name: 'Joon',
+    location: 'Lakefill',
+    time: 120
+  };
 });

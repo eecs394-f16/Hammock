@@ -20,12 +20,18 @@
 </head>
 <body ng-app="SteroidsApplication">
 
-<div class="padding" ng-controller="IndexController">
+<div ng-controller="IndexController">
 
   <super-navbar>
     <super-navbar-title ng-bind="navbarTitle">
     </super-navbar-title>
   </super-navbar>
+
+  <div>
+    <div class="friend-box">
+      <div class="namelocationtext">{{ tempFriend.name }}</div><div class="middletext"> is at the </div><div class="namelocationtext">{{ tempFriend.location }}</div>
+    </div>
+  </div>
 
   <p>Awesome! This file is located at <strong>www/index.html</strong> &mdash; open it, change some text, save the file, and press enter in the Terminal window running <strong>$ steroids connect</strong>. The changes are updated to all connected devices. Cool, ain't it?</p>
 
