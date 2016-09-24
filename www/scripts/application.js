@@ -3,8 +3,8 @@ angular.module('SteroidsApplication', [
 ])
 .controller('IndexController', function($scope, $http, supersonic) {
 
-  $scope.navbarTitle = "Welcome to Supersonic!";
   $scope.allposts = {}
+  $scope.navbarTitle = "Hammock";
 
   $http.get("www.herokuapp.com/allposts")
   	.success(data){
