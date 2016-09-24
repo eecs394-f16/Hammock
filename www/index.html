@@ -23,7 +23,8 @@
 <div ng-controller="IndexController">
 
   <super-navbar>
-    <super-navbar-title ng-bind="navbarTitle">
+    <super-navbar-title>
+      Hammock
     </super-navbar-title>
   </super-navbar>
 
@@ -37,7 +38,7 @@
 
   <h3>Using the Scanner App</h3>
 
-  <p>On iOS, to restart your current app or scan another app, <strong>tap and hold on the screen with three fingers.</strong>. This opens the Scanner context menu.</p>
+  <p>On iOS, to restart your current app or scan another app, <strong>tap and hold on the screen with three finger.</strong>. This opens the Scanner context menu.</p>
 
   <p>On Android, press the native back button to return to the scan screen.</p>
 
@@ -45,14 +46,17 @@
 
   <p>Angular works great with Supersonic native components. Changing the input field below will automatically update the navigation bar title.</p>
 
-  <div class="card padding">
-    <h4>Navigation Bar Title (Look Up!)</h4>
+  <div class="card padding" ng-repeat = "post in allposts">
+    <h4> {{post.name}} is down to chill at the {{post.location}} from {{post.from}} till {{post.to}} </h4>
+    <!-- <h4>Navigation Bar Title (Look Up!)</h4> -->
+    <!-- 
     <label class="item item-input">
       <input type="text" ng-model="navbarTitle">
-    </label>
+    </label> -->
   </div>
 
-  <p>You can find the AngularJS controller used at:</p>
+
+  <p>You can find the AngularJS controller used at: {{navbarTitle}}</p>
 
   <p><strong><small>www/scripts/application.js</small></strong></p>
 
