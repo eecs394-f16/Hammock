@@ -13,10 +13,9 @@ angular.module('SteroidsApplication', [
   };
 
   $http.get("www.herokuapp.com/allposts")
-  	.success(data){
-  		$scope.allposts = data
-  	}
-  	.error(data){
-  		console.log("The error is: " + data)
-  	}
+  	.success(function(data) {
+  		$scope.allposts = data;
+    }).error(function(err) {
+  		console.log("The error is: " + err);
+  	});
 });
