@@ -3,6 +3,6 @@ angular.module('SteroidsApplication', [
 ])
 .controller('IndexController', function($scope, supersonic) {
 
-  $scope.navbarTitle = "Welcome to Supersonic!";
+  $scope.navbarTitle = "Hammock";
 
 });
