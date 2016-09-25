@@ -28,47 +28,15 @@
     </super-navbar-title>
   </super-navbar>
 
-  <div>
+  <div ng-repeat="post in allposts">
     <div class="friend-box">
-      <div class="namelocationtext">{{ tempFriend.name }}</div>
-      <div class="middletext"> is at the </div>
-      <div class="namelocationtext">{{ tempFriend.location }}</div>
+      <div class="name-location-text">{{ post.data.name }}</div>
+      <div class="middle-text"> is at the </div>
+      <div class="name-location-text">{{ post.data.location }}</div>
     </div>
   </div>
 
-  <p>Awesome! This file is located at <strong>www/index.html</strong> &mdash; open it, change some text, save the file, and press enter in the Terminal window running <strong>$ steroids connect</strong>. The changes are updated to all connected devices. Cool, ain't it?</p>
-
-  <h3>Using the Scanner App</h3>
-
-  <p>On iOS, to restart your current app or scan another app, <strong>tap and hold on the screen with three finger.</strong>. This opens the Scanner context menu.</p>
-
-  <p>On Android, press the native back button to return to the scan screen.</p>
-
-  <h3>Working with AngularJS</h3>
-
-  <p>Angular works great with Supersonic native components. Changing the input field below will automatically update the navigation bar title.</p>
-
-  <div class="card padding" ng-repeat = "post in allposts">
-    <h4> {{post.name}} is down to chill at the {{post.location}} from {{post.from}} till {{post.to}} </h4>
-    <!-- <h4>Navigation Bar Title (Look Up!)</h4> -->
-    <!-- 
-    <label class="item item-input">
-      <input type="text" ng-model="navbarTitle">
-    </label> -->
-  </div>
-
-
-  <p>You can find the AngularJS controller used at: {{navbarTitle}}</p>
-
-  <p><strong><small>www/scripts/application.js</small></strong></p>
-
-  <h2>Get in touch with us!</h2>
-
-  <p>Learn more about building apps with Supersonic at <a onclick="supersonic.app.openURL('http://docs.appgyver.com')" href="">http://docs.appgyver.com</a>.</p>
-
-  <p>Feel free to contact us at <a onclick="supersonic.app.openURL('mailto:contact@appgyver.com')" href="">contact@appgyver.com</a>, we would love to get your feedback!</p>
-
-</div>
+</div><!-- IndexController -->
 
 </body>
 </html>
