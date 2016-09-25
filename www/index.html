@@ -29,7 +29,7 @@
   </super-navbar>
 
   <div ng-repeat="post in allposts track by $index">
-    <div class="friend-box" ng-style="{'background-color': boxColors[$index]}">
+    <div class="friend-box" ng-style="{'background-color': boxColors[$index % boxColors.length]}">
       <div class="name-location-text">{{ post.data.name }}</div>
       <div class="middle-text"> is at </div>
       <div class="name-location-text">{{ post.data.location }}</div>
