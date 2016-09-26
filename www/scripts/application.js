@@ -20,38 +20,35 @@ angular.module('SteroidsApplication', [
     "#D85820"
   ];
   $scope.boxInfo = function(index, data) {
-    /*
-    const options = {
-      message: "<div>Div 1</div><div>div 2 </div>",
-      buttonLabels: ["I'll join you!"]
-    };
-
-    supersonic.ui.dialog.confirm(data.name + " is at " + data.location, options).then(function(index) {
-      if (index == 0) {
-        supersonic.logger.log("I'll join you!");
-      }
-    });
-    */
-
-    const infobox = $('<div></div>');
-    infobox.addClass('info-box padding-vertical');
-
-    const time = $('<p></p>');
-    time.append("from " + data.start_time + " until " + data.end_time);
-    infobox.append(time);
-
-    const info = $('<p></p>');
-    info.append("Activity: " + data.event);
-    infobox.append(info);
-
-    const button = $('<button></button>');
-    button.addClass('button button-outline button-positive');
-    button.css('float', 'right');
-    button.append('I\'ll join you!');
-    infobox.append(button);
-
     const selectedBox = $('#box-' + index);
-    selectedBox.after(infobox);
+    const open = selectedBox.attr('data-info-open');
+    if (open === 'false') {
+      const infobox = $('<div></div>');
+      infobox.addClass('info-box padding-vertical');
+
+      const time = $('<p></p>');
+      time.append("from " + data.start_time + " until " + data.end_time);
+      infobox.append(time);
+
+      const info = $('<p></p>');
+      info.append("Activity: " + data.event);
+      infobox.append(info);
+
+      const button = $('<button></button>');
+      button.addClass('button button-outline button-positive');
+      button.css('float', 'right');
+      button.append('I\'ll join you!');
+      infobox.append(button);
+
+      selectedBox.after(infobox);
+
+      selectedBox.attr('data-info-open', 'true');
+    } else if (open === 'true') {
+      selectedBox.next().remove();
+
+      selectedBox.attr('data-info-open', 'false');
+    }
+
   };
 
   $http.get("https://tree2hammock.herokuapp.com/getLiveEvents")

@@ -39,6 +39,7 @@
       class="friend-box padding-horizontal"
       ng-style="{ 'background-color': boxColors[$index % boxColors.length] }"
       ng-click="boxInfo($index, post.data)"
+      data-info-open="false"
     >
       <div class="name-location-text">{{ post.data.name }}</div>
       <div class="middle-text"> is at </div>
