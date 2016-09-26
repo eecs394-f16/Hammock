@@ -3,7 +3,7 @@ angular.module('SteroidsApplication', ['supersonic'])
 
   // $scope.allposts = {}
   $scope.navbarTitle = "Hammock";
-  $scope.eventFormat = {name:"", user_id:"", location: "", start_time:"", end_time:"", "event":""};
+  $scope.eventFormat = {data : {name:"", user_id:"", location: "", start_time:"", end_time:"", "event":""}};
   $scope.newEvent    = {data : {name:"", user_id:"", location: "", start_time:"", end_time:"", theEvent:""}};
   $scope.boxColors = [
     "#58B947",
