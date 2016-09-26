@@ -16,6 +16,12 @@
   <script src="/components/supersonic/supersonic.js"></script>
   <script src="/components/webcomponentsjs/webcomponents-lite.js"></script>
 
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"
+  ></script>
+
   <script src="/scripts/application.js"></script>
 </head>
 <body ng-app="SteroidsApplication">
@@ -30,25 +36,38 @@
   </super-navbar>
 
   <div ng-repeat="post in allposts track by $index">
-    <div class="friend-box" ng-style="{'background-color': boxColors[$index % boxColors.length]}">
+    <div id="box-{{ $index }}"
+      class="friend-box padding-horizontal"
+      ng-style="{ 'background-color': boxColors[$index % boxColors.length] }"
+      ng-click="boxInfo($index, post.data)"
+      data-info-open="false"
+    >
       <div class="name-location-text">{{ post.data.name }}</div>
       <div class="middle-text"> is at </div>
       <div class="name-location-text">{{ post.data.location }}</div>
-      <div class="middle-text"> from {{post.data.start_time}} till {{post.data.end_time}} </div>
+
+     <!--  <div class="middle-text"> from {{post.data.start_time}} till {{post.data.end_time}} </div> -->
+      <div class="middle-text"> until </div>
+      <div class="date-text">{{ post.data.end_time }}</div>
     </div>
   </div>
-
-  <input placeholder="Enter your name" ng-model="newEvent.data.name"> 
-  <input placeholder="Enter your event" ng-model="newEvent.data.Event"> 
-  <input placeholder="Enter your location" ng-model="newEvent.data.location"> 
-  <input placeholder="From (24hrs format)" ng-model="newEvent.data.start_time">
-  <input placeholder="Until (24hrs format)" ng-model="newEvent.data.end_time">  
-  <p>
-    <button ng-click="sendEventForm()"> Create </button>
-    A  new form has been created: !!{{newEvent}}
-    <!-- {{tempCreate}} -->
-  </p>
-
+  <div> 
+    <h3> Enter the data for creating a new event </h3>
+    <p>
+      <input placeholder="Enter your name" ng-model="newEvent.data.name"> 
+      <input placeholder="Enter your event" ng-model="newEvent.data.Event"> 
+      <input placeholder="Enter your location" ng-model="newEvent.data.location"> 
+      <input placeholder="From (24hrs format)" ng-model="newEvent.data.start_time">
+      <input placeholder="Until (24hrs format)" ng-model="newEvent.data.end_time">  
+      <p>
+        <button ng-click="sendEventForm()"> Create </button>
+        <!-- new form has been created: !!{{newEvent}} -->
+        <p>
+          {{successmsg}}
+        </p>
+      </p>
+    </p>
+  </div>
 </div>
 
 </body>
