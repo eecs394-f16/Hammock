@@ -5,7 +5,21 @@ angular.module('SteroidsApplication', ['supersonic'])
   $scope.navbarTitle = "Hammock";
   $scope.eventFormat = {name:"", user_id:"", location: "", start_time:"", end_time:"", "event":""};
   $scope.newEvent    = {data : {name:"", user_id:"", location: "", start_time:"", end_time:"", theEvent:""}};
-  
+  $scope.boxColors = [
+    "#58B947",
+    "#7FCECD",
+    "#5091CD",
+    "#EDE93B",
+    "#FFC520",
+    "#EF553F",
+    "#008656",
+    "#007FA4",
+    "#0D2D6C",
+    "#D9C826",
+    "#CA7C1B",
+    "#D85820"
+  ];
+
   $scope.getEvents = function(){
     $http.get("http://tree2hammock.herokuapp.com/getLiveEvents")
       .success(function(data) {
@@ -19,8 +33,6 @@ angular.module('SteroidsApplication', ['supersonic'])
   
   $scope.sendEventForm = function(){
     
-    // $scope.tempCreate = "New Event Created";
-
     $http.post("http://tree2hammock.herokuapp.com/addNewEvent", JSON.stringify($scope.newEvent))
       .success(function(res){
         $scope.newEvent = $scope.eventFormat;

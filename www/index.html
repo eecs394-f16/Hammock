@@ -29,8 +29,13 @@
     <super-navbar-button location="indexi">Title</super-navbar-button>
   </super-navbar>
 
-  <div class="card padding" ng-repeat = "post in allposts">
-    <h4> {{post.data.name}} is down to {{post.data.theEvent}} at {{post.data.location}} from {{post.data.start_time}} till {{post.data.end_time}} </h4>
+  <div ng-repeat="post in allposts track by $index">
+    <div class="friend-box" ng-style="{'background-color': boxColors[$index % boxColors.length]}">
+      <div class="name-location-text">{{ post.data.name }}</div>
+      <div class="middle-text"> is at </div>
+      <div class="name-location-text">{{ post.data.location }}</div>
+      <div class="middle-text"> from {{post.data.start_time}} till {{post.data.end_time}} </div>
+    </div>
   </div>
 
   <input placeholder="Enter your name" ng-model="newEvent.data.name"> 
@@ -43,6 +48,7 @@
     A  new form has been created: !!{{newEvent}}
     <!-- {{tempCreate}} -->
   </p>
+
 </div>
 
 </body>

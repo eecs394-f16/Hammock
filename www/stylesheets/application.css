@@ -1,18 +1,19 @@
 .friend-box {
     height: 100px;
+    line-height: 80px;
     padding: 10px;
     text-align: center;
-    background-color: yellow;
 }
 
-.namelocationtext {
-    font-size: 2em;
-    font-style: bold;
+.name-location-text {
+    font-size: 30px;
+    font-weight: bold;
     display: inline-block;
 }
 
-.middletext {
-    display: inline-block;
+.middle-text {
+    font-size: 15px;
     padding-left: 5px;
     padding-right: 5px;
+    display: inline-block;
 }

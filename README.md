@@ -13,3 +13,10 @@ Current json data format:
             user_id:
         }
     }
+    
+# API Calls
+`/getLiveEvents`
+return an array of the live events
+
+`/addNewEvent`
+adds an event to the list of live events
