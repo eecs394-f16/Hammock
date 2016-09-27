@@ -45,11 +45,12 @@
       <div class="middle-text"> is at </div>
       <div class="name-location-text">{{ post.data.location }}</div>
 
-     <!--  <div class="middle-text"> from {{post.data.start_time}} till {{post.data.end_time}} </div> -->
+      <!--  <div class="middle-text"> from {{post.data.start_time}} till {{post.data.end_time}} </div> -->
       <div class="middle-text"> until </div>
       <div class="date-text">{{ post.data.end_time }}</div>
     </div>
-  </div>
+  </div><!-- ng-repeat -->
+
   <div> 
     <h3> Enter the data for creating a new event </h3>
     <p>
@@ -62,7 +63,7 @@
         <button ng-click="sendEventForm()"> Create </button>
         <!-- new form has been created: !!{{newEvent}} -->
         <p>
-          {{successmsg}}
+          {{ successmsg }}
         </p>
       </p>
     </p>

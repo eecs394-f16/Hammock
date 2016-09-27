@@ -58,7 +58,7 @@ angular.module('SteroidsApplication', ['supersonic'])
         $scope.allposts = data;
       })
       .error(function(err){
-        // console.log("The error is: " + err);
+        supersonic.logger.log("The error is: " + err);
         $scope.allposts = JSON.stringify(err);
       });
   };
