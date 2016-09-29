@@ -46,7 +46,21 @@
     font-style: italic;
     display: inline-block;
 }
-
+.time-text {
+    font-size: 30px;
+    width: 100%;
+    font-weight: 200;
+    text-align: right;
+    padding: 10px 10px 0 10px;
+}
+.activity-text{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+.join-button{
+    margin: 0 0 10px 10px;
+}
 .blank {
     height: 10vh;
     width: 100%;
@@ -62,4 +76,7 @@
     color: #ffffff;
     text-align: center;
 }
-
+.event-info-box{
+    display: none;
+    background-color: white;
+}
