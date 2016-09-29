@@ -9,7 +9,7 @@
     <div id="box-{{ $index }}"
       class="friend-box padding-horizontal"
       ng-style="{ 'background-color': boxColors[$index % boxColors.length] }"
-      ng-click="boxInfo($index, post.data)"
+      ng-click="toggleEventInfo($index, post.data)"
       data-info-open="false"
     >
       <div class="name-text">
@@ -25,11 +25,18 @@
           {{ post.data.location }}
         </p>
       </div>
-      <br>
-
-     <!--  <div class="middle-text"> from {{post.data.start_time}} till {{post.data.end_time}} </div> -->
-<!--       <div class="middle-text"> until </div>
-      <div class="date-text">{{ post.data.end_time }}</div> -->
+    </div>
+    <div id="box-info-{{ $index}}"
+      class="event-info-box"
+      >
+      <div class="time-text">
+        until {{post.data.end_time}}
+      </div>
+      <div class="activity-text">
+        {{post.data.event}}
+      </div>
+      <button class="button button-outline button-stable join-button">Let's Hang!</button>
+    </div>
     </div>
   </div>
   <div class="blank">
