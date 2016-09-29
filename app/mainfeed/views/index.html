@@ -6,9 +6,9 @@
     </super-navbar-title>
   </super-navbar>
 
-  <span id="ab" style="display:inline-block;position:fixed; right:8px; top:425px;">
+<!--   <span id="ab" style="display:inline-block;position:fixed; right:8px; top:425px;">
     <button type="button" onclick="getEvents()" style="height:70px; width:70px; border-radius:100%; background-color:aqua; border:2px solid #000"> + </button>
-  </span>
+  </span> -->
 
   <div ng-repeat="post in allposts track by $index">
     <div id="box-{{ $index }}"
@@ -26,8 +26,13 @@
       <div class="date-text">{{ post.data.end_time }}</div>
     </div>
   </div>
-
-  <div> 
+  <div class="blank">
+    Blank
+  </div>
+  <div class="hang-button">
+    <h1>Hang</h1>
+  </div>
+  <!-- <div> 
     <h3> Enter the data for creating a new event </h3>
     <p>
       <input placeholder="Enter your name" ng-model="newEvent.data.name"> 
@@ -37,12 +42,10 @@
       <input placeholder="Until (24hrs format)" ng-model="newEvent.data.end_time">  
       <p>
         <button ng-click="sendEventForm()"> Create </button>
-        <!-- new form has been created: !!{{newEvent}} -->
         <p>
           {{successmsg}}
         </p>
       </p>
     </p>
-
-  </div>
+  </div> -->
 </div>

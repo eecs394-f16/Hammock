@@ -1,4 +1,5 @@
 angular.module('mainfeed').controller('IndexController', function($scope, supersonic, $http) {
+  supersonic.ui.tabs.hide();
     // $scope.allposts = {}
     $scope.navbarTitle = "Hammock";
     $scope.eventFormat = {data : {name:"", user_id:"", location: "", start_time:"", end_time:"", "event":""}};
