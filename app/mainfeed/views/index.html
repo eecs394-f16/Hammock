@@ -12,17 +12,27 @@
       ng-click="boxInfo($index, post.data)"
       data-info-open="false"
     >
-      <div class="name-location-text">{{ post.data.name }}</div>
-      <div class="middle-text"> is at </div>
-      <div class="name-location-text">{{ post.data.location }}</div>
+      <div class="name-text">
+        <p>
+          {{ post.data.name }}
+          <span class="middle-text"> is at </span>
+        </p>
+
+      </div>
+      <br>
+      <div class="name-location-text"> 
+        <p>
+          {{ post.data.location }}
+        </p>
+      </div>
+      <br>
 
      <!--  <div class="middle-text"> from {{post.data.start_time}} till {{post.data.end_time}} </div> -->
-      <div class="middle-text"> until </div>
-      <div class="date-text">{{ post.data.end_time }}</div>
+<!--       <div class="middle-text"> until </div>
+      <div class="date-text">{{ post.data.end_time }}</div> -->
     </div>
   </div>
   <div class="blank">
-    Blank
   </div>
   <div class="hang-button">
     <h1>Hang</h1>
