@@ -48,7 +48,6 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
 
         selectedBox.attr('data-info-open', 'false');
       }
-
     };
 
     $scope.getEvents = function() {
@@ -60,17 +59,5 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
           // console.log("The error is: " + err);
           $scope.allposts = JSON.stringify(err);
         });
-    };
-    
-    $scope.sendEventForm = function() {
-      
-      $http.post("http://tree2hammock.herokuapp.com/addNewEvent", JSON.stringify($scope.newEvent))
-        .success(function(res){
-          $scope.newEvent = $scope.eventFormat;
-          $scope.successmsg = "New Event Created"
-          $scope.getEvents();
-        }).error(function(err){
-          $scope.tempCreate = "Not created"
-        })
     };
   });

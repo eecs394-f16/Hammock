@@ -1,0 +1,26 @@
+<div ng-controller="IndexController">
+
+  <super-navbar>
+    <super-navbar-title>
+      Hang with me!
+    </super-navbar-title>
+  </super-navbar>
+
+  <div> 
+    <h3> Enter the data for creating a new event </h3>
+    <p>
+      <input placeholder="Enter your name" ng-model="newEvent.data.name"> 
+      <input placeholder="Enter your event" ng-model="newEvent.data.Event"> 
+      <input placeholder="Enter your location" ng-model="newEvent.data.location"> 
+      <input placeholder="From (24hrs format)" ng-model="newEvent.data.start_time">
+      <input placeholder="Until (24hrs format)" ng-model="newEvent.data.end_time">  
+      <p>
+        <button ng-click="sendEventForm()"> Create </button>
+        <p>
+          {{successmsg}}
+        </p>
+      </p>
+    </p>
+  </div>
+
+</div>
