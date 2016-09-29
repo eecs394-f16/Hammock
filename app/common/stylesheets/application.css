@@ -7,8 +7,9 @@
 
 /* Custom */
 .friend-box {
-    line-height: 80px;
+    overflow: hidden;
     text-align: center;
+    padding: 15px 0 15px 0;
 }
 
 .info-box {
@@ -18,17 +19,26 @@
     overflow: auto;
 }
 
+.name-text {
+    font-size: 30px;
+    font-weight: 400;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding: 0 10px 0 10px;
+}
 .name-location-text {
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 200;
     display: inline-block;
+    width: 100%;
+    text-align: right;
+    padding: 0 10px 0 10px;
 }
 
 .middle-text {
     font-size: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
-    display: inline-block;
+    font-weight: 200;
 }
 
 .date-text {
@@ -48,8 +58,8 @@
     right: 0;
     height: 10vh;
     width: 100%;
-    background-color: green;
-    color: white;
+    background-color: grey;
+    color: #ffffff;
     text-align: center;
 }
 
