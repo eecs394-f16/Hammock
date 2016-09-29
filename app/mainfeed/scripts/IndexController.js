@@ -1,4 +1,4 @@
-angular.module('mainfeed').controller('IndexController', function($scope, supersonic) {
+angular.module('mainfeed').controller('IndexController', function($scope, supersonic, $http) {
     // $scope.allposts = {}
     $scope.navbarTitle = "Hammock";
     $scope.eventFormat = {data : {name:"", user_id:"", location: "", start_time:"", end_time:"", "event":""}};
@@ -50,7 +50,7 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
 
     };
 
-    $scope.getEvents = function(){
+    $scope.getEvents = function() {
       $http.get("http://tree2hammock.herokuapp.com/getLiveEvents")
         .success(function(data) {
           $scope.allposts = data;
@@ -61,7 +61,7 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
         });
     };
     
-    $scope.sendEventForm = function(){
+    $scope.sendEventForm = function() {
       
       $http.post("http://tree2hammock.herokuapp.com/addNewEvent", JSON.stringify($scope.newEvent))
         .success(function(res){
@@ -72,4 +72,4 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
           $scope.tempCreate = "Not created"
         })
     };
-});
+  });
