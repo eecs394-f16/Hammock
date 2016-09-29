@@ -36,3 +36,18 @@
     font-style: italic;
     display: inline-block;
 }
+
+#add-button-wrapper {
+  display: inline-block;
+  position: fixed;
+  right: 8px;
+  top: 425px;
+}
+
+#add-button {
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  background-color: #4E2A84;
+  border: 2px solid #000
+}
