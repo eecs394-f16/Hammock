@@ -8,18 +8,26 @@
 
   <div> 
     <h3> Enter the data for creating a new event </h3>
+    <div class="list">
+      <label class="item item-input">
+        <input placeholder="Enter your name" ng-model="newEvent.data.name"> 
+      </label>
+      <label class="item item-input">
+        <input placeholder="Enter your event" ng-model="newEvent.data.event"> 
+      </label>
+      <label class="item item-input">
+        <input placeholder="Enter your location" ng-model="newEvent.data.location"> 
+      </label>
+      <label class="item item-input">
+        <input placeholder="From (24hrs format)" ng-model="newEvent.data.start_time">
+      </label>
+      <label class="item item-input">
+        <input placeholder="Until (24hrs format)" ng-model="newEvent.data.end_time">  
+      </label>
+    </div>
+    <button ng-click="sendEventForm()"> Create </button>
     <p>
-      <input placeholder="Enter your name" ng-model="newEvent.data.name"> 
-      <input placeholder="Enter your event" ng-model="newEvent.data.event"> 
-      <input placeholder="Enter your location" ng-model="newEvent.data.location"> 
-      <input placeholder="From (24hrs format)" ng-model="newEvent.data.start_time">
-      <input placeholder="Until (24hrs format)" ng-model="newEvent.data.end_time">  
-      <p>
-        <button ng-click="sendEventForm()"> Create </button>
-        <p>
-          {{successmsg}}
-        </p>
-      </p>
+      {{successmsg}}
     </p>
   </div>
 </div>
