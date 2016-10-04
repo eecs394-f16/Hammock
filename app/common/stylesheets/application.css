@@ -64,7 +64,7 @@
 .blank {
     height: 10vh;
     width: 100%;
-    background-color: white;
+    background-color: black;
 }
 .hang-button{
     position: fixed;
@@ -72,9 +72,13 @@
     right: 0;
     height: 10vh;
     width: 100%;
-    background-color: grey;
-    color: #ffffff;
+    background-color: black;
     text-align: center;
+    opacity: .7;
+}
+.hang-button h1 {
+    color: white;
+    opacity: 1;
 }
 .event-info-box{
     display: none;
