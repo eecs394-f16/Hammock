@@ -18,7 +18,6 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
   ];
   $scope.toggleEventInfo = function (index, data) {
     var state = document.querySelector('#box-info-'+index).style.display
-    steroids.logger.log(state)
     if (state === 'none' || state === '') {
       document.querySelector('#box-info-'+index).style.display = 'block'
     } else {
