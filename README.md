@@ -5,12 +5,19 @@ Current json data format:
     {
         $id: ###,
         data: {
-            name:
-            location:
-            start_time:
-            end_time:
-            event:
             user_id:
+            location: {
+                name:
+                latitude:
+                longitude:
+            },
+            activity:
+            group: [user_id_1, user_id_2, ...],
+            image:
+            time: {
+                start:
+                end:
+            }
         }
     }
     
