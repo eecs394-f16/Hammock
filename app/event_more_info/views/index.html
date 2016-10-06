@@ -1,4 +1,4 @@
-<div ng-controller="IndexController">
+<div ng-controller="IndexController" ng-init="getEvent()">
 
   <super-navbar>
     <super-navbar-title>
@@ -8,7 +8,8 @@
 
   <div class="padding">
     <div class='map'>
-    A Map Will Go Here
+    A Map Will Go Here k
+    {{$scope.data}}
     </div>
     <div class='details'>
     The details of the event will go here

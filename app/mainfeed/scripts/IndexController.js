@@ -42,15 +42,11 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
     };
   });
   $scope.letsHangButton = function(_id) {
-    // supersonic.logger.log($scope.allposts[0])
-    for (i = 0; i < $scope.allposts.length + 1; i++) {
-      supersonic.logger.log($scope.allposts[i])
+    for (i = 0; i < $scope.allposts.length; i++) {
+      if ($scope.allposts[i]._id == _id) {
+        supersonic.logger.log($scope.allposts[i].data.name)
+        supersonic.data.channel('eventInfo').publish({data: $scope.allposts[i].data})
+      }
     }
-    // $scope.allposts.forEach(function(event, index) {
-    //   supersonic.logger.log(event)
-    //   // if (event._id === _id) {
-    //   //   supersonic.data.channel('event').publish({data: event.data})
-    //   // }
-    // })
   }
 });

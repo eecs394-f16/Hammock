@@ -1,7 +1,12 @@
 angular
   .module('event_more_info')
   .controller('IndexController', function($scope, supersonic) {
-    supersonic.data.channel('event').subscribe(function(message) {
-      supersonic.logger.log(message.event)
+
+    $scope.getEvent = function() {
+      supersonic.logger.log('hi')
+      supersonic.data.channel('eventInfo').subscribe(function(message) {
+        $scope.data = message.data
+        supersonic.logger.log(message)
+      })
     }
   });
