@@ -3,7 +3,7 @@
 Current json data format:
 
     {
-        $id: ###,
+        _id: ###,
         data: {
             user_id:
             location: {
@@ -18,12 +18,28 @@ Current json data format:
                 start:
                 end:
             }
-        }
+        },
+        secuirty_token: ###
+
     }
     
 # API Calls
-`/getLiveEvents`
+GET
+
+`/getLiveEvents?securityToken={security_token}`
 return an array of the live events
 
+POST
+
 `/addNewEvent`
+{
+    data: {data},
+    security_token: ###
+}
 adds an event to the list of live events
+
+`/deleteEvent`
+{
+    _id: ###
+    security_token: ###
+}
