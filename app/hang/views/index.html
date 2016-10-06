@@ -7,30 +7,27 @@
   </super-navbar>
 
   <div> 
-    <h3> Enter the data for creating a new event </h3>
-    <div class="list">
+    <div class="list list-inset">
       <label class="item item-input">
-        <input type="text" placeholder="Enter your name" ng-model="newEvent.data.name"> 
+        <span class="input-label">What are you doing?</span>
+        <input type="text" ng-model="newEvent.data.activity"> 
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Enter your event" ng-model="newEvent.data.event"> 
+        <span class="input-label">Where are you?</span>
+        <input type="text" ng-model="newEvent.data.location.name"> 
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Enter your location" ng-model="newEvent.data.location"> 
+        <span class="input-label">From:</span>
+        <input type="datetime-local" ng-model="newEvent.data.time.start">
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="From (24hrs format)" ng-model="newEvent.data.start_time">
+        <span class="input-label">Until:</span>
+        <input type="datetime-local" ng-model="newEvent.data.time.end">
       </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Until (24hrs format)" ng-model="newEvent.data.end_time">  
-      </label>
+
+      <button ng-click="sendEventForm()" class="button button-full button-positive">
+        Create
+      </button>
     </div>
-    
-    <button ng-click="sendEventForm()" class="button">
-      Create
-    </button>
-    <p>
-      {{successmsg}}
-    </p>
   </div>
 </div>

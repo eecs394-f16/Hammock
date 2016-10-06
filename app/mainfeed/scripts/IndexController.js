@@ -2,8 +2,6 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
   supersonic.ui.tabs.hide();
 
   $scope.navbarTitle = "Hammock";
-  $scope.eventFormat = {data : {name:"", user_id:"", location: "", start_time:"", end_time:"", "event":""}};
-  $scope.newEvent    = {data : {name:"", user_id:"", location: "", start_time:"", end_time:"", theEvent:""}};
   $scope.boxColors = [
     "#7FCECD",
     "#5091CD",
