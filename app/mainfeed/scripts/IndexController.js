@@ -1,6 +1,5 @@
 angular.module('mainfeed').controller('IndexController', function($scope, supersonic, $http) {
   supersonic.ui.tabs.hide();
-
   $scope.navbarTitle = "Hammock";
   $scope.eventFormat = {data : {name:"", user_id:"", location: "", start_time:"", end_time:"", "event":""}};
   $scope.newEvent    = {data : {name:"", user_id:"", location: "", start_time:"", end_time:"", theEvent:""}};
@@ -41,12 +40,8 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
       $scope.getEvents();
     };
   });
+
   $scope.letsHangButton = function(_id) {
-    for (i = 0; i < $scope.allposts.length; i++) {
-      if ($scope.allposts[i]._id == _id) {
-        supersonic.logger.log($scope.allposts[i].data.name)
-        supersonic.data.channel('eventInfo').publish({data: $scope.allposts[i].data})
-      }
-    }
+    supersonic.data.channel('event_info').publish({event:_id});
   }
 });

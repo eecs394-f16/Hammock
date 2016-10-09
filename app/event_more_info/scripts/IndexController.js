@@ -1,12 +1,16 @@
 angular
   .module('event_more_info')
-  .controller('IndexController', function($scope, supersonic) {
+  .controller('IndexController', function($scope, supersonic, $http) {
+    supersonic.data.channel('event_info').subscribe(function(message){
+      $scope.data = message.event
+    })
 
-    $scope.getEvent = function() {
-      supersonic.logger.log('hi')
-      supersonic.data.channel('eventInfo').subscribe(function(message) {
-        $scope.data = message.data
-        supersonic.logger.log(message)
-      })
-    }
+    // $scope.loadPage = function () {
+    //   supersonic.data.channel('event_info').subscribe(function(message){
+    //     $scope.data = 'test'
+    //   })
+    // }
+    // $scope.changeData = function() {
+    //   $scope.data = $scope.data
+    // }
   });
