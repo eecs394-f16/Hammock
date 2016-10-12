@@ -42,6 +42,6 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
   });
 
   $scope.letsHangButton = function(_id) {
-    supersonic.data.channel('event_info').publish({event:_id});
+    supersonic.data.channel('event_info').publish({ event:_id });
   }
 });
