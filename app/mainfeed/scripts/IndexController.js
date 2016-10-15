@@ -26,7 +26,12 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
   $scope.getEvents = function() {
     $http.get("http://tree2hammock.herokuapp.com/getLiveEvents")
       .success(function(data) {
+        for (i = 0; i < data.length ; i++) {
+          data[i].data.time.end = `${new Date(data[i].data.time.end).getHours().toString()}:${new Date(data[i].data.time.end).getMinutes().toString()}`
+        }
+        // data[0].data.time.end = new Date(data[0].data.time.end).getHours().toString()
         $scope.allposts = data;
+        supersonic.logger.log(data)
       })
       .error(function(err){
         // console.log("The error is: " + err);
