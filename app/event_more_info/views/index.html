@@ -8,14 +8,20 @@
 
   <div class="padding">
     <div class='map'>
-    A Map Will Go Here k
-    {{$scope.data}}
+    A Map Will Go Here
+    <iframe src="//www.google.com/maps/embed/v1/place?q=-37.866963,144.980615
+      &zoom=17
+      &key=AIzaSyD8Cv3ebP-PEq6XDoxCCVqSgKoX8VMbrog"> </iframe>
+      
+      <!-- In the above command, we can replace the coordinates by the ones computed by us! -->
     </div>
     <div class='details'>
-    The details of the event will go here
+      Your friend {{$scope.data.name}} is {{$scope.data.actvity}} at {{$scope.data.location.name}}
+      <br>
+      He is going to be there between {{$scope.data.time.start}} and {{$scope.data.time.end}}
     </div>
     <div class='going'>
-    Who is going to the event will go here
+      Who is going to the event will go here
     </div>
   </div>
 
