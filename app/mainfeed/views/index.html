@@ -23,7 +23,7 @@
       <br>
       <div class="name-location-text"> 
         <p>
-          {{ post.data.location }}
+          {{ post.data.location.name }}
         </p>
       </div>
     </div>
@@ -31,10 +31,10 @@
       class="event-info-box"
       >
       <div class="time-text">
-        until {{post.data.end_time}}
+        until {{post.data.time.end}}
       </div>
       <div class="activity-text">
-        {{post.data.event}}
+        {{post.data.activity}}
       </div>
       <super-navigate location="event_more_info#index">
         <div>
