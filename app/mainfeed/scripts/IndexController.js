@@ -31,7 +31,6 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
         }
         // data[0].data.time.end = new Date(data[0].data.time.end).getHours().toString()
         $scope.allposts = data;
-        supersonic.logger.log(data)
       })
       .error(function(err){
         // console.log("The error is: " + err);
