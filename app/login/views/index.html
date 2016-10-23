@@ -1,0 +1,22 @@
+<div ng-controller="IndexController">
+
+  <super-navbar>
+    <super-navbar-title>
+      Login
+    </super-navbar-title>
+  </super-navbar>
+
+  <div>
+    <h3>Please login!</h3>
+    <p>
+      <input placeholder="Username" ng-model="username"> 
+      <input type="password" placeholder="Password" ng-model="password"> 
+      <p>
+        <button ng-click="sendEventForm()"> Login </button>
+        <p>
+          {{successmsg}}
+        </p>
+      </p>
+    </p>
+  </div>
+</div>

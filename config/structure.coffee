@@ -31,5 +31,5 @@ module.exports =
   #     animation: "swingingDoor"
   #
   # initialView:
-  #   id: "initialView"
-  #   location: "example#initial-view"
+  #  id: "initialView"
+  #  location: "login#index"
