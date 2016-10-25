@@ -1,6 +1,5 @@
 angular.module('mainfeed').controller('IndexController', function($scope, supersonic, $http) {
   supersonic.ui.tabs.hide();
-
   $scope.navbarTitle = "Hammock";
   $scope.boxColors = [
     "#7FCECD",
@@ -41,6 +40,10 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
   supersonic.data.channel('eventAdded').subscribe(function(message) {
     if (message.event == 'added') {
       $scope.getEvents();
-    }
+    };
   });
+
+  $scope.letsHangButton = function(_id) {
+    supersonic.data.channel('event_info').publish({ event:_id });
+  }
 });

@@ -2,13 +2,12 @@
 
   <super-navbar>
     <super-navbar-title>
-      {name} | {location}
+      {{data.name}} | {{data.location.name}}
     </super-navbar-title>
   </super-navbar>
-
   <div class="padding">
     <div class='map'>
-    A Map Will Go Here
+    A Map Will Go Here k
     </div>
     <div class='details'>
     The details of the event will go here
@@ -16,6 +15,7 @@
     <div class='going'>
     Who is going to the event will go here
     </div>
+    {{data}}
   </div>
 
   <button ng-click="going()" class="button button-full button-positive">

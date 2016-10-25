@@ -31,4 +31,5 @@ angular
         supersonic.logger.log(err);
       });
     };
+    
   });

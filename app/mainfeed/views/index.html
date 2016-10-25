@@ -18,33 +18,33 @@
           {{ post.data.name }}
           <span class="middle-text"> is at </span>
         </p>
-
       </div>
+      
       <br>
+
       <div class="name-location-text"> 
         <p>
           {{ post.data.location.name }}
         </p>
       </div>
     </div>
-    <div id="box-info-{{ $index}}"
-      class="event-info-box"
-      >
+
+    <div id="box-info-{{ $index}}" class="event-info-box">
       <div class="time-text">
         until {{post.data.time.end}}
       </div>
+
       <div class="activity-text">
         {{post.data.activity}}
       </div>
-      <super-navigate location="event_more_info#index">
+
+      <super-navigate location="event_more_info#index?data={{ post.data }}">
         <div>
           <div class='join-button'> 
             <span> Lets Hang! </span>
           </div>
         </div>
       </super-navigate>
-      <!-- <button class="button button-outline button-stable join-button">Let's Hang!</button> -->
-    </div>
     </div>
   </div>
 
