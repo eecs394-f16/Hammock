@@ -36,17 +36,16 @@
       <div class="activity-text">
         {{post.data.activity}}
       </div>
-      <super-navigate location="event_more_info#index" ng-click = "sendInfo(post._id)">
+      <super-navigate location="event_more_info#index?data={{ post.data }}">
         <div>
           <div class='join-button'> 
             Let's Hang!
           </div>
         </div>
-      <!-- </super-navigate> -->
-      <!-- <button class="button button-outline button-stable join-button">Let's Hang!</button> -->
-    </div>
+      </super-navigate>
     </div>
   </div>
+
 
   <!-- This div is to make sure the hang button doesn't hide any data when
     the page is scrolled all the way to the bottom. -->

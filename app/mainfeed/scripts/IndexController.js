@@ -45,13 +45,16 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
     }
   });
 
-  $scope.sendInfo = function(m){
-    len = $scope.allposts.length;
-    for (var i =0; i<len; i++){
-      if ($scope.allposts[i]._id == m){
-        supersonic.logger.log({message:$scope.allposts[i]})
-        supersonic.data.channel("sendInfo").publish({message:$scope.allposts[i]})
-      }
-    }
+  $scope.letsHangButton = function(_id) {
+    supersonic.data.channel('event_info').publish({ event:_id });
   }
+  // $scope.sendInfo = function(m){
+  //   len = $scope.allposts.length;
+  //   for (var i =0; i<len; i++){
+  //     if ($scope.allposts[i]._id == m){
+  //       supersonic.logger.log({message:$scope.allposts[i]})
+  //       supersonic.data.channel("sendInfo").publish({message:$scope.allposts[i]})
+  //     }
+  //   }
+  // }
 });
