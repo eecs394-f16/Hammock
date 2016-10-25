@@ -7,15 +7,24 @@
   </super-navbar>
 
   <div class="padding">
-    <div class='map'>
-    A Map Will Go Here
+   <!-- {{firts()}} -->
+    <div class='map' width = "100%">
+    
+    <iframe src="//www.google.com/maps/embed/v1/place?q=-37.866963,144.980615
+      &zoom=17
+      &key=AIzaSyD8Cv3ebP-PEq6XDoxCCVqSgKoX8VMbrog"> </iframe>
+      
+      <!-- In the above command, we can replace the coordinates by the ones computed by us! -->
     </div>
+    <button ng-click = "firts()"> clickme </button>
     <div class='details'>
-    The details of the event will go here
+      Data is : {{data}} 
+      Your friend {{data.name}} is {{data.actvity}} at {{data.location.name}}
+      <br>
+      
+      He is going to be there between {{data.time.start}} and {{data.time.end}}
     </div>
     <div class='going'>
-    Who is going to the event will go here
+      Who is going to the event will go here {{myname}}
     </div>
-  </div>
-
 </div>

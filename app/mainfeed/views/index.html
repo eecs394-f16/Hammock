@@ -36,13 +36,13 @@
       <div class="activity-text">
         {{post.data.activity}}
       </div>
-      <super-navigate location="event_more_info#index">
+      <super-navigate location="event_more_info#index" ng-click = "sendInfo(post._id)">
         <div>
           <div class='join-button'> 
-            <span> Lets Hang! </span>
+            Let's Hang!
           </div>
         </div>
-      </super-navigate>
+      <!-- </super-navigate> -->
       <!-- <button class="button button-outline button-stable join-button">Let's Hang!</button> -->
     </div>
     </div>
