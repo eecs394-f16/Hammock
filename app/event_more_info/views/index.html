@@ -2,7 +2,7 @@
 
   <super-navbar>
     <super-navbar-title>
-      {{data.user_id}} | {{data.location.name}}
+      Hammock
     </super-navbar-title>
   </super-navbar>
   <div class="padding">
@@ -26,7 +26,7 @@
 
         var uluru = {lat:myJsondata["location"]["latitude"] , lng: myJsondata["location"]["longitude"] };
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 6,
           center: uluru
         });
         var marker = new google.maps.Marker({
