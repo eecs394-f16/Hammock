@@ -21,8 +21,9 @@
       function initMap() {
         var mydata = steroids.view.params.data;
         var myJsondata = JSON.parse(mydata)
-        document.getElementById("content").innerHTML = "Your friend " + myJsondata["name"] + "is at " + myJsondata["location"]["name"]
-        var uluru = {lat:-25.363 , lng: 131.044 };
+        document.getElementById("content").innerHTML = "Your friend " + myJsondata["name"] + " is " + myJsondata["activity"] + " at " + myJsondata["location"]["name"] + " . He is going to be there between " + myJSONdata["time"]["start"] + " and " +  myJSONdata["time"]["end"]
+
+        var uluru = {lat:myJsondata["location"]["latitude"] , lng: myJsondata["location"]["longitude"] };
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru
