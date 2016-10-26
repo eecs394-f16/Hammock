@@ -6,9 +6,32 @@
     </super-navbar-title>
   </super-navbar>
   <div class="padding">
-    <div class='map'>
-    A Map Will Go Here k
-    </div>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+
+    <div id='map'></div>
+
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6KXlYl-4D53hr0JSNui0REqv6jbnKj6M&callback=initMap">
+    </script>
+
     <div class='details'>
     The details of the event will go here
     </div>
