@@ -2,7 +2,7 @@
 
   <super-navbar>
     <super-navbar-title>
-      {{data.name}} | {{data.location.name}}
+      {{data.user_id}} | {{data.location.name}}
     </super-navbar-title>
   </super-navbar>
   <div class="padding">
@@ -14,10 +14,15 @@
     </style>
 
     <div id='map'></div>
-
+     <!--  {{data.location.longitude}}
+      {{data.location.longitude}} -->
     <script>
+
       function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+        var mydata = steroids.view.params.data;
+        var myJsondata = JSON.parse(mydata)
+        document.getElementById("content").innerHTML = "Your friend " + myJsondata["name"] + "is at " + myJsondata["location"]["name"]
+        var uluru = {lat:-25.363 , lng: 131.044 };
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru
@@ -31,14 +36,15 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6KXlYl-4D53hr0JSNui0REqv6jbnKj6M&callback=initMap">
     </script>
-
+    <div id="content"></div>
     <div class='details'>
     The details of the event will go here
     </div>
     <div class='going'>
     Who is going to the event will go here
     </div>
-    {{data}}
+    
+    My name is 
   </div>
 
   <button ng-click="going()" class="button button-full button-positive">

@@ -2,7 +2,7 @@ angular
   .module('event_more_info')
   .controller('IndexController', function($scope, supersonic) {
     $scope.data = steroids.view.params.data;
-
+    // $scope.username = $scope.data.name
     $scope.going = function() {
       var options = {
         title: "Name",
