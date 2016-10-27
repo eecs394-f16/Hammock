@@ -5,6 +5,7 @@
       Hammock
     </super-navbar-title>
   </super-navbar>
+  
   <div class="padding">
     <style>
       #map {
@@ -14,13 +15,11 @@
     </style>
 
     <div id='map'></div>
-     <!--  {{data.location.longitude}}
-      {{data.location.longitude}} -->
     <script>
 
       function initMap() {
         var mydata = steroids.view.params.data;
-        var myJsondata = JSON.parse(mydata)
+        var myJsondata = JSON.parse(mydata).data;
 
         var month = new Array();
         month[0] = "Jan";
@@ -72,12 +71,6 @@
     </script>
     <div id="content"></div>
 
-   <!-- <div class='details'>
-    The details of the event will go here
-    </div> 
-    <div class='going'>
-    Who is going to the event will go here
-    </div> -->
   </AIzaSyD6KXlYl-4D53hr0JSNui0REqv6jbnKj6M>
 
   <button ng-click="going()" class="button button-full button-positive">
