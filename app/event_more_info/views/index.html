@@ -2,13 +2,13 @@
 
   <super-navbar>
     <super-navbar-title>
-      {{data.user_id}} | {{data.location.name}}
+      Hammock
     </super-navbar-title>
   </super-navbar>
   <div class="padding">
     <style>
       #map {
-        height: 400px;
+        height: 250px;
         width: 100%;
        }
     </style>
@@ -21,12 +21,44 @@
       function initMap() {
         var mydata = steroids.view.params.data;
         var myJsondata = JSON.parse(mydata)
-        document.getElementById("content").innerHTML = "Your friend " + myJsondata["name"] + " is " + myJsondata["activity"] + " at " + myJsondata["location"]["name"]
-         + ". He is going to be there between " + myJsondata["time"]["start"] + " and " +  myJsondata["time"]["end"]
+
+        var month = new Array();
+        month[0] = "Jan";
+        month[1] = "Feb";
+        month[2] = "Mar";
+        month[3] = "Apr";
+        month[4] = "May";
+        month[5] = "Jun";
+        month[6] = "Jul";
+        month[7] = "Aug";
+        month[8] = "Sep";
+        month[9] = "Oct";
+        month[10] = "Nov";
+        month[11] = "Dec";
+
+        var strTime = new Date(myJsondata.time.start).getHours().toString() + ':' ;
+        if (new Date(myJsondata.time.start).getMinutes() < 10){
+          strTime += '0' + new Date(myJsondata.time.start).getMinutes().toString();
+        } else{
+          strTime += new Date(myJsondata.time.start).getMinutes().toString();
+        }
+
+        var endTime = new Date(myJsondata.time.end).getHours().toString() + ':' ;
+        if (new Date(myJsondata.time.end).getMinutes() < 10){
+          endTime += '0' + new Date(myJsondata.time.end).getMinutes().toString();
+        } else{
+          endTime += new Date(myJsondata.time.end).getMinutes().toString();
+        }
+        
+        var start_time = new Date(myJsondata.time.start).getDate().toString() + " " + month[new Date(myJsondata.time.start).getMonth().toString()] + " " + new Date(myJsondata.time.start).getFullYear().toString() + " " + strTime
+ 
+        var end_time = new Date(myJsondata.time.end).getDate().toString() + " " + month[new Date(myJsondata.time.end).getMonth().toString()] + " " + new Date(myJsondata.time.end).getFullYear().toString() + " " + endTime
+
+        document.getElementById("content").innerHTML = "<br>Your friend <b>" + myJsondata["name"] + "</b> is <b>" + myJsondata["activity"] + "</b> at <b>" + myJsondata["location"]["name"] + "</b> and is there <br> From : <b>" + start_time + "</b> <br> Till :  <b>" +  end_time + "</b>"
 
         var uluru = {lat:myJsondata["location"]["latitude"] , lng: myJsondata["location"]["longitude"] };
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 16,
           center: uluru
         });
         var marker = new google.maps.Marker({
@@ -39,15 +71,14 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6KXlYl-4D53hr0JSNui0REqv6jbnKj6M&callback=initMap">
     </script>
     <div id="content"></div>
-    <div class='details'>
+
+   <!-- <div class='details'>
     The details of the event will go here
-    </div>
+    </div> 
     <div class='going'>
     Who is going to the event will go here
-    </div>
-    
-    My name is 
-  </div>
+    </div> -->
+  </AIzaSyD6KXlYl-4D53hr0JSNui0REqv6jbnKj6M>
 
   <button ng-click="going()" class="button button-full button-positive">
     I'm going!

@@ -25,9 +25,9 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
   $scope.getEvents = function() {
     $http.get("http://tree2hammock.herokuapp.com/getLiveEvents")
       .success(function(data) {
-        for (i = 0; i < data.length ; i++) {
-          data[i].data.time.end = `${new Date(data[i].data.time.end).getHours().toString()}:${new Date(data[i].data.time.end).getMinutes().toString()}`
-        }
+        //for (i = 0; i < data.length ; i++) {
+        //  data[i].data.time.end = `${new Date(data[i].data.time.end).getHours().toString()}:${new Date(data[i].data.time.end).getMinutes().toString()}`
+        //}
         // data[0].data.time.end = new Date(data[0].data.time.end).getHours().toString()
         $scope.allposts = data;
       })
@@ -45,5 +45,15 @@ angular.module('mainfeed').controller('IndexController', function($scope, supers
 
   $scope.letsHangButton = function(_id) {
     supersonic.data.channel('event_info').publish({ event:_id });
+  }
+
+  $scope.timeFormat = function(dateString) {
+    var strDate = new Date(dateString).getHours().toString() + ':' 
+    if (new Date(dateString).getMinutes() < 10){
+      strDate += '0' + new Date(dateString).getMinutes().toString()
+    } else{
+      strDate += new Date(dateString).getMinutes().toString()
+    }
+    return strDate
   }
 });
