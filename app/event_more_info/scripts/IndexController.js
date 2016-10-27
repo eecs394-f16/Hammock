@@ -2,6 +2,7 @@ angular
   .module('event_more_info')
   .controller('IndexController', function($scope, supersonic, $http) {
     $scope.data = JSON.parse(steroids.view.params.data);
+    supersonic.logger.log($scope.data.data.going);
     $scope.going = function() {
       var options = {
         title: "Name",
