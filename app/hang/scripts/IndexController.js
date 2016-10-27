@@ -7,6 +7,8 @@ angular
         // Add current location to submission data
         $scope.newEvent.data.location.latitude = position.coords.latitude;
         $scope.newEvent.data.location.longitude = position.coords.longitude;
+        // Add empty list of people who are going
+        $scope.newEvent.data.going = [];
 
         return;
       }).then(function() {
